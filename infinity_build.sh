@@ -28,6 +28,7 @@ else
     echo "Patch directory not found: $PATCH_DIR"
     exit 1
 fi
+repo forall Keinamvy/kernel_xiaomi_sm6150 -c "git submodule update --init --recursive"
 
 # 5. Build Environment and Compilation
 export BUILD_USERNAME=Keinamvy
