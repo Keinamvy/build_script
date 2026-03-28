@@ -30,6 +30,6 @@ else
 fi
 
 # 5. Build Environment and Compilation
-. build/envsetup.sh
+source build/envsetup.sh
 lunch infinity_sweet2-userdebug
-m bacon -j$(nproc --all)
+m bacon
