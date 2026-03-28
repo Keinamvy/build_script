@@ -30,6 +30,8 @@ else
 fi
 
 # 5. Build Environment and Compilation
+export BUILD_USERNAME=Keinamvy
+export BUILD_HOSTNAME=crave
 source build/envsetup.sh
 lunch infinity_sweet2-userdebug
 m bacon
