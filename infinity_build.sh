@@ -14,23 +14,9 @@ git clone https://github.com/Keinamvy/local_manifests.git \
 
 # 3. Sync Source
 /opt/crave/resync.sh
-
-# 4. Apply Patches
-PATCH_DIR="device/xiaomi/sweet2/patches"
-
-if [ -d "$PATCH_DIR" ]; then
-    echo "Applying patches from $PATCH_DIR..."
-    patch -p1 -d build/soong < "$PATCH_DIR"/000*.patch
-    patch -p1 -d frameworks/base < "$PATCH_DIR"/001*.patch
-    patch -p1 -d packages/apps/InfinitySuite < "$PATCH_DIR"/002*.patch
-    patch -p1 -d vendor/extras < "$PATCH_DIR"/003*.patch
-else
-    echo "Patch directory not found: $PATCH_DIR"
-    exit 1
-fi
 repo forall Keinamvy/kernel_xiaomi_sm6150 -c "git submodule update --init --recursive"
 
-# 5. Build Environment and Compilation
+# 4. Build Environment and Compilation
 export BUILD_USERNAME=Keinamvy
 export BUILD_HOSTNAME=crave
 source build/envsetup.sh
