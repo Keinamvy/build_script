@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # 1. Cleanup and Initialization
-rm -rf .repo/local_manifests/
+rm -rf .repo/local_manifests
+rm -rf device/xiaomi
+rm -rf vendor/xiaomi
+rm -rf kernel/xiaomi
+rm -rf hardware/xiaomi
 
 repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault
 
